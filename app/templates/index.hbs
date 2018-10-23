@@ -1,7 +1,7 @@
 <h1>Home Page</h1>
 
 <div class="jumbotron text-center">
-  <h1>Coming Soon</h1>
+  <h2>{{headerTitle}}</h2>
 
   <br/><br/>
 
@@ -15,8 +15,8 @@
         <button class="btn btn-primary btn-lg btn-block" disabled={{isDisabled}} {{action 'saveInvitation'}}>Request invitation</button>
     </div>
   </div>
-  {{#if responseMessage}}
-    <div class="alert alert-success">{{responseMessage}}</div>
+  {{#if successMessage}}
+    <div class="alert alert-success">{{successMessage}}</div>
   {{/if}}
   <br/><br/>
 </div>
