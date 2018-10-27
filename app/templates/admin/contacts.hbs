@@ -12,6 +12,7 @@
       <tr>
         <th>{{contact.email}}</th>
         <th>{{contact.message}}</th>
+        <th><th><button class="btn btn-danger btn-xs" {{action 'deleteContact' contact}}>Delete</button></th></th>
       </tr>
     {{/each}}
   </tbody>
