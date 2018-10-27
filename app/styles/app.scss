@@ -26,6 +26,14 @@ html {
   padding-bottom: 20px;
 }
 
+.vtop {
+  vertical-align: top!important;
+}
+
+.not-bold {
+  font-weight: normal!important;
+}
+
 // Spinner in a button
 .glyphicon.spinning {
   animation: spin 1s infinite linear;
