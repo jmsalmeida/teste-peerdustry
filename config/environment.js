@@ -7,8 +7,16 @@ module.exports = function(environment) {
     rootURL: '/',
     locationType: 'auto',
 
+    torii: {
+      sessionServiceName: 'session',
+      // providers: {
+      //   redirectUri: '/login'
+      // }
+    },
+
     firebase : {
-      apiKey: process.env.FIREBASE_KEY,
+      // apiKey: process.env.FIREBASE_KEY,
+      apiKey: "AIzaSyAwQmr3j331BaQ7ljUSMJs-7xyEGQuXlgQ",
       authDomain: "teste-ember-281a3.firebaseapp.com",
       databaseURL: "https://teste-ember-281a3.firebaseio.com",
       projectId: "teste-ember-281a3",
@@ -34,11 +42,11 @@ module.exports = function(environment) {
   };
 
   if (environment === 'development') {
-    ENV.APP.LOG_RESOLVER = true;
-    ENV.APP.LOG_ACTIVE_GENERATION = true;
-    ENV.APP.LOG_TRANSITIONS = true;
-    ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
-    ENV.APP.LOG_VIEW_LOOKUPS = true;
+    // ENV.APP.LOG_RESOLVER = true;
+    // ENV.APP.LOG_ACTIVE_GENERATION = true;
+    // ENV.APP.LOG_TRANSITIONS = true;
+    // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
+    // ENV.APP.LOG_VIEW_LOOKUPS = true;
   }
 
   if (environment === 'test') {

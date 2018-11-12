@@ -55,6 +55,8 @@
     "node": "6.* || 8.* || >= 10.*"
   },
   "dependencies": {
-    "babel-plugin-debug-macros": "^0.2.0"
+    "babel-plugin-debug-macros": "^0.2.0",
+    "npm": "^6.4.1",
+    "torii": "^0.10.1"
   }
 }

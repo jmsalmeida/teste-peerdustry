@@ -3,14 +3,32 @@
   <form>
     <div class="form-group">
       <label for="exampleInputEmail1">Email address</label>
-       {{input type="email" value=emailAddress class="form-control" placeholder="Please type your e-mail address." autofocus="autofocus"}}
+      {{input 
+        type="email" 
+        value=emailAddress 
+        class="form-control" 
+        placeholder="Please type your e-mail address." 
+        autofocus="autofocus"
+      }}
     </div>
     <div class="form-group">
       <label for="exampleFormControlTextarea1">Your message</label>
-      {{textarea class="form-control" id="exampleFormControlTextarea1" rows="7" value=message placeholder="Your message. (At least 5 characters." autofocus="autofocus"}}
-
+      {{textarea 
+        class="form-control" 
+        id="exampleFormControlTextarea1" 
+        rows="7" 
+        value=message 
+        placeholder="Your message. (At least 5 characters." 
+        autofocus="autofocus"
+      }}
     </div>
-    <button type="submit" class="btn btn-primary" disabled={{isDisabled}} {{action 'saveMessage'}}>send message</button>
+    <button 
+      type="submit" 
+      class="btn btn-primary" 
+      disabled={{isDisabled}} 
+      {{action "saveMessage"}}
+    > send message
+    </button>
     {{#if successMessage}}
       <div class="alert alert-success">{{successMessage}}</div>
     {{/if}}

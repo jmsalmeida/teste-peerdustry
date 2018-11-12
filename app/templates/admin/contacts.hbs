@@ -1,5 +1,4 @@
 <h1>contacts</h1>
-
 <table class="table table-bordered table-striped">
   <thead>
     <tr>
@@ -12,7 +11,15 @@
       <tr>
         <th>{{contact.email}}</th>
         <th>{{contact.message}}</th>
-        <th><th><button class="btn btn-danger btn-xs" {{action 'deleteContact' contact}}>Delete</button></th></th>
+        <th>
+          <th>
+            <button 
+              class="btn btn-danger btn-xs" 
+              {{action "deleteContact" contact}}
+            > Delete
+            </button>
+          </th>
+        </th>
       </tr>
     {{/each}}
   </tbody>

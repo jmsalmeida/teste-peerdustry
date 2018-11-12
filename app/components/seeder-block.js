@@ -22,16 +22,18 @@ export default Component.extend({
 
   actions: {
 
-    generateAction() {
+    generateAction(generateAction) {
       if (this.get('isCounterValid')) {
 
         // Action up to Seeder Controller with the requested amount
-        this.sendAction('generateAction', this.get('counter'));
+        // this.sendAction('generateAction', this.get('counter'));
+        this.get('sendAction')(generateAction);
+        this.get('counter');
       }
     },
 
-    deleteAction() {
-      this.sendAction('deleteAction');
+    deleteAction(deleteAction) {
+      this.get('sendAction')(deleteAction)
     }
 
   }

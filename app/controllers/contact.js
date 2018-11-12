@@ -16,7 +16,7 @@ export default Controller.extend({
       const message = this.get('message')
       const newReqContact = this.store.createRecord('contact', { email: email, message: message });
 
-      newReqContact.save().then(response => {
+      newReqContact.save().then(() => {
         this.set('responseMessage', `We got your message and we’ll get in touch soon`);
         this.set('emailAddress', '');
         this.set('message', '');
