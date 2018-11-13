@@ -8,8 +8,7 @@ export default Controller.extend({
     signIn() {
       const email = this.get('emailAddress');
       const password = this.get('userPassword');
-      
-
+    
       this.get('session').open('firebase', { provider: 'password', email: email, password: password }).then(() => {
         let previousTransition = this.previousTransition;
         if (previousTransition) {
@@ -21,7 +20,7 @@ export default Controller.extend({
       });
     },
 
-    signOut: function () {
+    signOut() {
       this.get('session').close();
       this.transitionToRoute('index');
     }

@@ -24,17 +24,9 @@ export default Component.extend({
 
     generateAction() {
       if (this.get('isCounterValid')) {
-
         // Action up to Seeder Controller with the requested amount
-        this.get('generateAction')(this.get('counter'))
-        
+        this.get('generateAction')(this.get('counter'));
       }
-    },
-
-    deleteAction() {
-      // this.sendAction('deleteAction');
-      this.get('deleteAction');
     }
-
   }
 });

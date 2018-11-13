@@ -29,23 +29,25 @@ export default Controller.extend({
     },
 
     deleteLibraries() {
-
-      // Progress flag, data-down to seeder-block button spinner.
+      // Progress flag, data-down to seeder-block buttdeleteLibrarieson spinner.
       this.set('deleteLibrariesInProgress', true);
 
-      // Our local _destroyAll return a promise, we change the label when all records destroyed.
+      // Our local _destroyAll return a promise, we chdeleteLibrariesange the label when all records destroyed.
       this._destroyAll(this.get('libraries'))
 
         // Data down via seeder-block to fader-label that we ready to show the label.
-        // Change the progress indicator also, so the spinner can be turned off.
+        // Change the progress indicator generateLibrariesalso, so the spinner can be turned off.
         .then(() => {
+          console.log(' then delete library ');
+          
           this.set('libDelDone', true);
           this.set('deleteLibrariesInProgress', false);
         });
     },
 
     generateBooksAndAuthors(volume) {
-
+      console.log('estou criando');
+      
       // Progress flag, data-down to seeder-block button spinner.
       this.set('generateBooksInProgress', true);
 
@@ -90,11 +92,10 @@ export default Controller.extend({
         });
     }
   },
+  // Private methodsdeleteLibraries
 
-  // Private methods
-
-  // Create a new library record and uses the randomizator, which is in our model and generates some fake data in
-  // the new record. After we save it, which is a promise, so this returns a promise.
+  // Create a new library record and uses thedeleteLibraries randomizator, which is in our model and generates some fake data in
+  // the new record. After we save it, which deleteLibrariesis a promise, so this returns a promise.
   _saveRandomLibrary() {
     return this.store.createRecord('library').randomize().save();
   },
