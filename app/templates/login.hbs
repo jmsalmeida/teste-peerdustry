@@ -1,6 +1,8 @@
 <h1>Login Page</h1>
 
-
+{{#if session.isAuthenticated }}
+  <p>Estou logado</p>
+{{/if}}
 <form>
   <div class="form-group">
     <label for="exampleInputEmail1">Email address</label>

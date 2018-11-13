@@ -1,14 +1,17 @@
 import Route from '@ember/routing/route';
-import Ember from 'ember';
+import { inject } from '@ember/service';
+
 
 export default Route.extend({
-  session: Ember.inject.service(),
-  
-  beforeModel() {
+  session: inject(),
+
+  beforeModel(transition) {
     let authenticated = this.session.get('isAuthenticated');
 
     if (!authenticated) {
-      this.transitionTo('login');
+      let loginController = this.controllerFor('login');
+      loginController.set('previousTransition', transition)
+      this.transitionTo('login')
     }
   }
 });

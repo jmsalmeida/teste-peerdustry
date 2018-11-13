@@ -22,20 +22,19 @@ export default Component.extend({
 
   actions: {
 
-    generateAction(generateAction) {
+    generateAction() {
       if (this.get('isCounterValid')) {
 
         // Action up to Seeder Controller with the requested amount
-        // this.sendAction('generateAction', this.get('counter'));
-        this.get('sendAction')(generateAction);
-        this.get('counter');
+        this.get('generateAction')(this.get('counter'))
+        
       }
     },
 
-    deleteAction(deleteAction) {
-      this.get('sendAction')(deleteAction)
+    deleteAction() {
+      // this.sendAction('deleteAction');
+      this.get('deleteAction');
     }
 
   }
-  
 });

@@ -148,5 +148,4 @@ export default Controller.extend({
     // Wrap all Promise in one common Promise, RSVP.all is our best friend in this process. ;)
     return all(recordsAreDestroying);
   }
-
 });

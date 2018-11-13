@@ -5,7 +5,7 @@ export default Component.extend({
   
   actions: {
     buttonClicked(param) {
-      this.get('sendAction')(param);
+      this.get('action')(param)
     }
   }
 });

@@ -1,8 +1,9 @@
 import Route from '@ember/routing/route';
-import Ember from 'ember';
+import { inject } from '@ember/service';
 
 export default Route.extend({
-  session: Ember.inject.service(),
+  session: inject(),
+  
   beforeModel: function () {
     return this.get('session').fetch().catch(function () {});
   }

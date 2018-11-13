@@ -3,7 +3,6 @@ import { observer } from '@ember/object';
 import Component from '@ember/component';
 
 export default Component.extend({
-
   tagName: 'span',
 
   classNames: ['label label-success label-fade'],
@@ -29,5 +28,4 @@ export default Component.extend({
     this.resetRunLater();
     this._super(...arguments);
   }
-  
 });
