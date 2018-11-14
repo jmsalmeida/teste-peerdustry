@@ -1,0 +1,40 @@
+<div class="testando">
+{{#paper-sidenav-container class="inner-sidenav"}}
+  {{#paper-sidenav
+    class="md-whiteframe-z2"
+    name="left"
+    open=leftSideBarOpen
+    onToggle=(action (mut leftSideBarOpen))
+  }}
+    {{#paper-content padding=true}}
+      <nav class="menu">
+        <ul>
+        {{#nav-link-to "index"}}Home{{/nav-link-to}}
+        {{#nav-link-to "libraries"}}Libraries{{/nav-link-to}}
+        {{#nav-link-to "authors"}}Authors{{/nav-link-to}}
+        {{#nav-link-to "books"}}Books{{/nav-link-to}}
+        {{#nav-link-to "about"}}About{{/nav-link-to}}
+        {{#nav-link-to "contact"}}Contact{{/nav-link-to}}
+        {{#nav-link-to "login"}}login{{/nav-link-to}}
+        </ul>
+
+        <ul>
+          {{#paper-list}}
+            {{!-- {{#menu-item onClick=(action "toggleExpandedItem")}}Components{{/menu-item}} --}}
+            {{#menu-item onClick=(action "toogleExpandedItem") expanded=demosExpanded canExpand=true}}Admin{{/menu-item}}
+
+            <div class="submenu">
+              {{#if layoutExpanded}}
+                {{#nav-link-to "admin.invitations"}}Invitations{{/nav-link-to}}
+                {{#nav-link-to "admin.contacts"}}Contacts{{/nav-link-to}}
+                {{#nav-link-to "admin.seeder"}}Seeder{{/nav-link-to}}
+              {{/if}}
+            </div>
+          {{/paper-list}}
+        </ul>
+      </nav>
+    {{/paper-content}}
+  {{/paper-sidenav}}
+  {{yield}}
+{{/paper-sidenav-container}}
+</div>
