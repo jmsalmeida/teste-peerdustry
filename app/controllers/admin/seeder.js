@@ -38,16 +38,12 @@ export default Controller.extend({
         // Data down via seeder-block to fader-label that we ready to show the label.
         // Change the progress indicator generateLibrariesalso, so the spinner can be turned off.
         .then(() => {
-          console.log(' then delete library ');
-          
           this.set('libDelDone', true);
           this.set('deleteLibrariesInProgress', false);
         });
     },
 
-    generateBooksAndAuthors(volume) {
-      console.log('estou criando');
-      
+    generateBooksAndAuthors(volume) {      
       // Progress flag, data-down to seeder-block button spinner.
       this.set('generateBooksInProgress', true);
 
