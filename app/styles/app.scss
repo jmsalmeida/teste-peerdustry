@@ -1,51 +1,39 @@
-@import "bootstrap";
+@import 'ember-paper';
 
-body {
-  padding-top: 20px;
+.menu{
+  list-style: none;
 }
 
-
-html {
-  overflow-y: scroll;
+.menu li {
+  padding: 10px 0;
+  // font-size: 10pt;
 }
 
-.library-item {
-  min-height: 150px;
+.menu a {
+  text-decoration: none;
+  color: #000000;
 }
 
-.label-fade {
-  margin: 10px;
-  opacity: 0;
-  @include transition(all 0.5s);
-  &.label-show {
-    opacity: 1;
-  }
+span.flex {
+  display: flex;
+  justify-content: center;
 }
 
-.extra-padding-bottom {
-  padding-bottom: 20px;
+.testando {
+  height: 100vh;
 }
 
-.vtop {
-  vertical-align: top!important;
+.card-box {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  align-items: center;
 }
 
-.not-bold {
-  font-weight: normal!important;
-}
-
-// Spinner in a button
-.glyphicon.spinning {
-  animation: spin 1s infinite linear;
-  -webkit-animation: spin2 1s infinite linear;
-}
-
-@keyframes spin {
-  from { transform: scale(1) rotate(0deg); }
-  to { transform: scale(1) rotate(360deg); }
-}
-
-@-webkit-keyframes spin2 {
-  from { -webkit-transform: rotate(0deg); }
-  to { -webkit-transform: rotate(360deg); }
+.card-inside {
+  min-width: 400px;
+  padding: 0 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
