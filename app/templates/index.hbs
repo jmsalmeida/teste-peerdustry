@@ -1,24 +1,36 @@
 <div class="card-box">
   {{#paper-card as |card|}}
-  <div class="card-inside">
-    {{#card.title as |title|}}
-      {{#title.text as |text|}}
-        {{#text.headline}}{{headerTitle}}{{/text.headline}}
-        {{#text.subhead}}Don"t miss our launch date, request an invitation now.{{/text.subhead}}
-      {{/title.text}}
-    {{/card.title}}
-    <div>
-        {{paper-input label="E-mail" type="email" value=emailAddress onChange=(action (mut emailAddress))}}
+    <div class="card-inside">
+      {{#card.title as |title|}}
+        {{#title.text as |text|}}
+          {{#text.headline}}{{headerTitle}}{{/text.headline}}
+          {{#text.subhead}}Don"t miss our launch date, request an invitation now.{{/text.subhead}}
+        {{/title.text}}
+      {{/card.title}}
+    
+      <div>
+        {{paper-input 
+          label     = "E-mail" 
+          type      = "email" 
+          value     = emailAddress 
+          onChange  = (action (mut emailAddress))
+        }}
+      </div>
+      {{#card.actions}}
+        {{#paper-button 
+          raised    = true 
+          disabled  = isDisabled 
+          primary   = true 
+          onClick   = (action "saveInvitation")
+        }}Request invitation
+        {{/paper-button}}
+      {{/card.actions}}
+      {{#card.actions}}
+        {{#if responseMessage}}
+          <div>{{responseMessage}}</div>
+        {{/if}}
+      {{/card.actions}}
     </div>
-    {{#card.actions}}
-      {{#paper-button raised=true disabled=isDisabled primary=true onClick=(action "saveInvitation")}}Request invitation{{/paper-button}}
-    {{/card.actions}}
-    {{#card.actions}}
-      {{#if responseMessage}}
-        <div>{{responseMessage}}</div>
-      {{/if}}
-    {{/card.actions}}
-  </div>
   {{/paper-card}}
 </div>
 

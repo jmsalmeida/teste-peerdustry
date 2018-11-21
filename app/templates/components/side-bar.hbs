@@ -1,4 +1,3 @@
-<div class="testando">
 {{#paper-sidenav-container class="inner-sidenav"}}
   {{#paper-sidenav
     class="md-whiteframe-z2"
@@ -9,19 +8,23 @@
     {{#paper-content padding=true}}
       <nav class="menu">
         <ul>
-        {{#nav-link-to "index"}}Home{{/nav-link-to}}
-        {{#nav-link-to "libraries"}}Libraries{{/nav-link-to}}
-        {{#nav-link-to "authors"}}Authors{{/nav-link-to}}
-        {{#nav-link-to "books"}}Books{{/nav-link-to}}
-        {{#nav-link-to "about"}}About{{/nav-link-to}}
-        {{#nav-link-to "contact"}}Contact{{/nav-link-to}}
-        {{#nav-link-to "login"}}login{{/nav-link-to}}
+          {{#nav-link-to "index"}}Home{{/nav-link-to}}
+          {{#nav-link-to "libraries"}}Libraries{{/nav-link-to}}
+          {{#nav-link-to "authors"}}Authors{{/nav-link-to}}
+          {{#nav-link-to "books"}}Books{{/nav-link-to}}
+          {{#nav-link-to "about"}}About{{/nav-link-to}}
+          {{#nav-link-to "contact"}}Contact{{/nav-link-to}}
+          {{#nav-link-to "login"}}login{{/nav-link-to}}
         </ul>
 
         <ul>
           {{#paper-list}}
-            {{!-- {{#menu-item onClick=(action "toggleExpandedItem")}}Components{{/menu-item}} --}}
-            {{#menu-item onClick=(action "toogleExpandedItem") expanded=demosExpanded canExpand=true}}Admin{{/menu-item}}
+            {{#menu-item 
+              onClick=(action "toogleExpandedItem") 
+              expanded=demosExpanded 
+              canExpand=true
+            }}Admin
+            {{/menu-item}}
 
             <div class="submenu">
               {{#if layoutExpanded}}
@@ -35,6 +38,10 @@
       </nav>
     {{/paper-content}}
   {{/paper-sidenav}}
-  {{yield}}
+  <main class="layout-column flex-grow">
+    <div class="flex-20"></div>
+    <div class="layout-row">
+      {{yield}}
+    </div>
+  </main>
 {{/paper-sidenav-container}}
-</div>

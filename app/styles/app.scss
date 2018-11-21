@@ -1,5 +1,9 @@
 @import 'ember-paper';
 
+main {
+  min-height: 100vh;
+}
+
 .menu{
   list-style: none;
 }
@@ -17,10 +21,6 @@
 span.flex {
   display: flex;
   justify-content: center;
-}
-
-.testando {
-  height: 100vh;
 }
 
 .card-box {
