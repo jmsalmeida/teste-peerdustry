@@ -1,12 +1,16 @@
-<div class="panel panel-default library-item">
-  <div class="panel-heading">
-    <h3 class="panel-title">{{item.name}}</h3>
-  </div>
-  <div class="panel-body">
-    <p>Address: {{item.address}}</p>
-    <p>Phone: {{item.phone}}</p>
-  </div>
-  <div class="panel-footer text-right">
+{{#paper-card as |card|}}
+  {{#card.title as |title|}}
+    {{#title.text as |text|}}
+      {{#text.headline}}{{item.name}}{{/text.headline}}
+    {{/title.text}}
+  {{/card.title}}
+  {{#card.title as |title|}}
+    {{#title.text as |text|}}
+      {{#text.subhead}}Address: {{item.address}}{{/text.subhead}}
+      {{#text.subhead}}Phone: {{item.phone}}{{/text.subhead}}
+    {{/title.text}}
+  {{/card.title}}
+  {{#card.actions}}
     {{yield}}
-  </div>
-</div>
+  {{/card.actions}}
+{{/paper-card}}

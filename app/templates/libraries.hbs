@@ -1,11 +1,18 @@
-<h1>Libraries</h1>
+<div class="libraries">
+  <h1>Libraries</h1>
 
-<div class="well">
-  <ul class="nav nav-pills">
-    {{#link-to "libraries.index" tagName="li"}}<a href="">List all</a>{{/link-to}}
-    {{#link-to "libraries.new" tagName="li"}}<a href="">Add new</a>{{/link-to}}
-  </ul>
+  <div class="libraries-nav">
+    <ul>
+      {{#paper-button 
+        raised  = true 
+        primary = true
+      }}{{#link-to "libraries.index" tagName="li"}}<a href="">List all</a>{{/link-to}}
+      {{/paper-button}}
+      {{#paper-button 
+        primary = true
+      }}{{#link-to "libraries.new" tagName="li"}}<a href="">Add new</a>{{/link-to}}
+      {{/paper-button}}
+    </ul>
+  </div>
+  {{outlet}}
 </div>
-
-{{outlet}}
-
